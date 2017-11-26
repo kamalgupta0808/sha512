@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Hash Password</title>
+		<!-- <script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha3.js"></script> -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha512.js"></script>
+		<style type="text/css">
+			#hashedPW{
+				font-family: consolas;
+			}
+		</style>
+		<body>
+		<input type="text" id="pw"/>
+		<button id="hashPW" onclick="hashPW()">Hash Password </button>
+		<div id="hashedPW"></div>
+		<script type="text/javascript">
+			function hashPW(){
+				var password=document.getElementById("pw").value;
+				console.log(CryptoJS);
+				var hash=CryptoJS.SHA512(password);
+				document.getElementById('hashedPW').innerHTML=hash;
+			}
+
+		</script>
+		</body>
+	</head>
+
+</html>
